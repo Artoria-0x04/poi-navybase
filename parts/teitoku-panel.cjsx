@@ -1,6 +1,7 @@
 {ROOT, layout, _, $, $$, React, ReactBootstrap, toggleModal} = window
 {log, warn, error} = window
 {Panel, Grid, Col} = ReactBootstrap
+CombinedPanel = require './combined-panel'
 
 order = if layout == 'horizonal' or window.doubleTabbed then [1, 3, 5, 7, 2, 4, 6, 8] else [1..8]
 
@@ -23,9 +24,9 @@ totalExp = [
 getHeader = (state) ->
   if state.nickname?
     if state.level == 120
-      return "Lv. #{state.level} #{state.nickname} [#{rankName[state.rank]}]　　　　Exp. #{state.exp}"
+      return "Lv. #{state.level} #{state.nickname} [#{rankName[state.rank]}] [#{state.exp}]"
     else
-      return "Lv. #{state.level} #{state.nickname} [#{rankName[state.rank]}]　　　　Next. #{state.nextExp}"
+      return "Lv. #{state.level} #{state.nickname} [#{rankName[state.rank]}] [#{state.nextExp}]"
   else
     return '提督 [尚未登录]'
 
@@ -171,19 +172,22 @@ TeitokuPanel = React.createClass
     window.removeEventListener 'game.response', @handleResponse
   render: ->
     <Panel header={getHeader @state} bsStyle="default" className="teitoku-panel">
-      <Grid>
-        <Col xs={6}>舰娘：{@state.shipCount} / {@state.maxChara}</Col>
-        <Col xs={6}>装备：{@state.slotitemCount} / {@state.maxSlotitem}</Col>
-      </Grid>
-      <Grid style={marginTop: 5}>
-      {
-        for i in order
-          <Col key={i} xs={3}>
-            <img src={getMaterialImage i} className="material-icon" />
-            <span className="material-value">{@state.material[i]}</span>
-          </Col>
-      }
-      </Grid>
+    <div style={display:"flex", justifyContent:"space-between"}>
+      <div style={display:"flex", flexFlow:"column nowrap", flex:"none"}>
+        <div xs={12}><p>舰娘：{@state.shipCount} / {@state.maxChara}</p></div>
+        <div xs={12}><p>装备：{@state.slotitemCount} / {@state.maxSlotitem}</p></div>
+        {
+          for i in order
+            <div key={i} xs={12}>
+              <p>
+                <img src={getMaterialImage i} className="material-icon" />
+                <span className="material-value">{@state.material[i]}</span>
+              </p>
+            </div>
+        }
+      </div>
+      <CombinedPanel style={flex:"none", height:"100%"} />
+    </div>
     </Panel>
 
 module.exports = TeitokuPanel

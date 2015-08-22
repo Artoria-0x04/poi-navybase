@@ -5,3 +5,4 @@ module.exports =
   TaskPanel: require './task-panel'
   MiniShip: require './miniship'
   TeitokuPanel: require './teitoku-panel'
+  CombinedPanel: require './combined-panel'
