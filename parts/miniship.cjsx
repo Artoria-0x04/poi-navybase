@@ -546,11 +546,11 @@ PaneBody = React.createClass
                     <OverlayTrigger show = {ship.api_ndock_time} placement='bottom' overlay={<Tooltip>入渠时间：{resolveTime ship.api_ndock_time / 1000}</Tooltip>}>
                       <ProgressBar style={flex: "auto"} bsStyle={getHpStyle ship.api_nowhp / ship.api_maxhp * 100} now={ship.api_nowhp / ship.api_maxhp * 100} />
                     </OverlayTrigger>
-                    <span className="shipFB" style={flex: "none"}>
+                    <span className="ship-fuelbullet" style={flex: "none"}>
                       <ProgressBar bsStyle={getMaterialStyle ship.api_fuel / shipInfo.api_fuel_max * 100}
                                    now={ship.api_fuel / shipInfo.api_fuel_max * 100} />
                     </span>
-                    <span className="shipFB" style={flex: "none"}>
+                    <span className="ship-fuelbullet" style={flex: "none"}>
                       <ProgressBar bsStyle={getMaterialStyle ship.api_bull / shipInfo.api_bull_max * 100}
                                    now={ship.api_bull / shipInfo.api_bull_max * 100} />
                     </span>
