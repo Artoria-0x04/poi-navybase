@@ -157,7 +157,7 @@
     /*margin-bottom: 5px;*/
     /*width: 32px;*/
 }
-.miniship .ship-details .ship-item .ship-cond .condIndicator
+.miniship .ship-details .ship-item .ship-cond .cond-indicator
 {
     display: inline-block;
 
@@ -167,22 +167,22 @@
 
     vertical-align: middle;
 }
-/*.miniship .ship-details .condBar {
+/*.miniship .ship-details .cond-bar {
   margin-top: 3px;
 }
-.miniship .ship-details .condText {
+.miniship .ship-details .condtext {
   font-size: 60%;
   margin-right: 4px;
   flex: none;
   line-height: 1;
 }
-.miniship .ship-details .condProgress {
+.miniship .ship-details .cond-progress {
   width: 100%;
 }
-.miniship .ship-details .condProgress .progress-bar {
+.miniship .ship-details .cond-progress .progress-bar {
 
 }
-.miniship .ship-details .condProgress .progress-bar:last-child:before {
+.miniship .ship-details .cond-progress .progress-bar:last-child:before {
   content: attr(data-content);
   background-color: #292929;
 }*/
@@ -235,7 +235,7 @@
 }
 
 
-.miniship .ship-details .ship-item .shipFB
+.miniship .ship-details .ship-item .ship-fuelbullet
 {
     display: flex;
     flex-direction: row;
@@ -245,7 +245,7 @@
     flex: 1;
     /*margin-right: 4px;*/
 }
-.miniship .ship-details .ship-item .shipFB .progress
+.miniship .ship-details .ship-item .ship-fuelbullet .progress
 {
     width: 6px;
 }
