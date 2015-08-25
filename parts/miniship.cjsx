@@ -147,29 +147,29 @@ RecoveryBar = React.createClass
   getInitialState: ->
     elapsed: 0
   updateCountdown: ->
-    @setStaship-details
+    @setState
       elapsed: @state.elapsed + 1000
   componentWillUnmount: ->
     @interval = clearInterval @interval
   componentDidMount: ->
     @interval = setInterval @updateCountdown, 1000 if !@interval?
     if @props.repairTimer.remain? and @state.elapsed - @props.repairTimer.remain < 0
-      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#28BDF4"
+      $(".miniship .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#28BDF4"
     else if @props.missionTimer.remain? and@state.elapsed - @props.missionTimer.remain < 0
-      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#747474"
+      $(".miniship .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#747474"
     else if @props.condTimer.remain? and @state.elapsed - @props.condTimer.remain < 0
-      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#F4CD28"
+      $(".miniship .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#F4CD28"
     else
-      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#7FC135"
+      $(".miniship .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#7FC135"
   componentDidUpdate: (prevProps, prevState) ->
     if @props.repairTimer.remain? and @state.elapsed - @props.repairTimer.remain < 0
-      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#28BDF4"
+      $(".miniship .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#28BDF4"
     else if @props.missionTimer.remain? and @state.elapsed - @props.missionTimer.remain < 0
-      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#747474"
+      $(".miniship .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#747474"
     else if @props.condTimer.remain? and @state.elapsed - @props.condTimer.remain < 0
-      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#F4CD28"
+      $(".miniship .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#F4CD28"
     else
-      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#7FC135"
+      $(".miniship .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#7FC135"
   render: ->
     if @props.repairTimer.remain? and @state.elapsed - @props.repairTimer.remain < 0
       <ProgressBar key={1} className="rec-progress-#{@props.deckIndex}"
@@ -196,7 +196,7 @@ RecoveryBar = React.createClass
           100
         } />
     else
-      <ProgressBar key={1} className="rec-progress" id="rec-progress-#{@props.deckIndex}" now={100} />
+      <ProgressBar key={1} className="rec-progress rec-progress-#{@props.deckIndex}" now={100} />
 
 getBackdropStyle = ->
   if window.isDarkTheme

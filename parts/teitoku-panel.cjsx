@@ -171,9 +171,12 @@ TeitokuPanel = React.createClass
   componentWillUnmount: ->
     window.removeEventListener 'game.response', @handleResponse
   render: ->
-    <Panel header={getHeader @state} bsStyle="default" className="teitoku-panel">
-      <div style={display:"flex", justifyContent:"space-between"}>
-        <div className="flex-column" style={flex:"none"}>
+    <div className="flex-column">
+      <Panel className="teitoku-panel">
+        {getHeader @state}
+      </Panel>
+      <div className="flex-row" style={display:"flex", justifyContent:"space-between", height:274, minHeight:270}>
+        <Panel className="flex-column" style={flex:"none"}>
           <div xs={12}><p>舰娘：{@state.shipCount} / {@state.maxChara}</p></div>
           <div xs={12}><p>装备：{@state.slotitemCount} / {@state.maxSlotitem}</p></div>
           {
@@ -185,9 +188,9 @@ TeitokuPanel = React.createClass
                 </p>
               </div>
           }
-        </div>
+        </Panel>
         <CombinedPanel style={flex:"none", height:"100%"} />
       </div>
-    </Panel>
+    </div>
 
 module.exports = TeitokuPanel
