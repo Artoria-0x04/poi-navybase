@@ -1,0 +1,25 @@
+{
+  "name": "compactview",
+  "version": "1.0.0",
+  "description": "another mainview plugin for poi",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/poooi/poi-compact-info.git"
+  },
+  "keywords": [
+    "kancolle",
+    "poi",
+    "plugin",
+    "compactview"
+  ],
+  "author": "Artoria, KochiyaOcean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poooi/poi-compact-info/issues"
+  },
+  "homepage": "https://github.com/poooi/poi-compact-info",
+  "dependencies": {
+   "i18n": "^0.5.0"
+  }
+}
