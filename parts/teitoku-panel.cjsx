@@ -172,22 +172,22 @@ TeitokuPanel = React.createClass
     window.removeEventListener 'game.response', @handleResponse
   render: ->
     <Panel header={getHeader @state} bsStyle="default" className="teitoku-panel">
-    <div style={display:"flex", justifyContent:"space-between"}>
-      <div style={display:"flex", flexFlow:"column nowrap", flex:"none"}>
-        <div xs={12}><p>舰娘：{@state.shipCount} / {@state.maxChara}</p></div>
-        <div xs={12}><p>装备：{@state.slotitemCount} / {@state.maxSlotitem}</p></div>
-        {
-          for i in order
-            <div key={i} xs={12}>
-              <p>
-                <img src={getMaterialImage i} className="material-icon" />
-                <span className="material-value">{@state.material[i]}</span>
-              </p>
-            </div>
-        }
+      <div style={display:"flex", justifyContent:"space-between"}>
+        <div className="flex-column" style={flex:"none"}>
+          <div xs={12}><p>舰娘：{@state.shipCount} / {@state.maxChara}</p></div>
+          <div xs={12}><p>装备：{@state.slotitemCount} / {@state.maxSlotitem}</p></div>
+          {
+            for i in order
+              <div key={i} xs={12}>
+                <p>
+                  <img src={getMaterialImage i} className="material-icon" />
+                  <span className="material-value">{@state.material[i]}</span>
+                </p>
+              </div>
+          }
+        </div>
+        <CombinedPanel style={flex:"none", height:"100%"} />
       </div>
-      <CombinedPanel style={flex:"none", height:"100%"} />
-    </div>
     </Panel>
 
 module.exports = TeitokuPanel

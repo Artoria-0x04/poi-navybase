@@ -98,31 +98,31 @@ NdockPanel = React.createClass
     window.removeEventListener 'game.response', @handleResponse
     clearInterval @updateCountdown, 1000
   render: ->
-    <Panel bsStyle="default" >
+    <div bsStyle="default" >
     {
       for i in [1..4]
         if @state.docks[i].countdown > 60
-          <div key={i} className="panelItem ndockItem">
-            <div className="ndockName">{@state.docks[i].name}</div>
-            <Label className="ndockTimer" bsStyle="info">
+          <div key={i} className="panel-item ndock-item">
+            <div className="ndock-name">{@state.docks[i].name}</div>
+            <Label className="ndock-timer" bsStyle="info">
               {resolveTime @state.docks[i].countdown}
             </Label>
           </div>
         else if @state.docks[i].countdown > -1
-          <div key={i}  className="panelItem ndockItem">
-            <div className="ndockName">{@state.docks[i].name}</div>
-            <Label className="ndockTimer" bsStyle="success">
+          <div key={i}  className="panel-item ndock-item">
+            <div className="ndock-name">{@state.docks[i].name}</div>
+            <Label className="ndock-timer" bsStyle="success">
               {resolveTime @state.docks[i].countdown}
             </Label>
           </div>
         else
-          <div key={i}  className="panelItem ndockItem">
-            <div className="ndockName">{@state.docks[i].name}</div>
-            <Label className="ndockTimer" bsStyle="default">
+          <div key={i}  className="panel-item ndock-item">
+            <div className="ndock-name">{@state.docks[i].name}</div>
+            <Label className="ndock-timer" bsStyle="default">
               {resolveTime 0}
             </Label>
           </div>
     }
-    </Panel>
+    </div>
 
 module.exports = NdockPanel
