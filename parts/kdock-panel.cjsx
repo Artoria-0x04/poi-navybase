@@ -153,7 +153,7 @@ KdockPanel = React.createClass
     window.removeEventListener 'game.response', @handleResponse
     clearInterval @updateCountdown, 1000
   render: ->
-    <Panel bsStyle="default" >
+    <div bsStyle="default" >
     {
       for i in [1..4]
         <OverlayTrigger key={i} placement='top' overlay={
@@ -179,44 +179,44 @@ KdockPanel = React.createClass
         {
           if @state.docks[i].countdown > 0
             if @state.docks[i].material[0] >= 1500 && @state.docks[i].material[1] >= 1500 && @state.docks[i].material[2] >= 2000 || @state.docks[i].material[3] >= 1000
-              <div className="panelItem kdockItem">
-                <div className="kdockName">
+              <div className="panel-item kdock-item">
+                <div className="kdock-name">
                   {@state.docks[i].name}
                 </div>
-                <Label className="kdockTimer" bsStyle="danger">
+                <Label className="kdock-timer" bsStyle="danger">
                   {resolveTime @state.docks[i].countdown}
                 </Label>
               </div>
             else
-              <div className="panelItem kdockItem">
-                <div className="kdockName">
+              <div className="panel-item kdock-item">
+                <div className="kdock-name">
                   {@state.docks[i].name}
                 </div>
-                <Label className="kdockTimer" bsStyle="info">
+                <Label className="kdock-timer" bsStyle="info">
                   {resolveTime @state.docks[i].countdown}
                 </Label>
               </div>
           else if @state.docks[i].countdown is 0
-            <div className="panelItem kdockItem">
-              <div className="kdockName">
+            <div className="panel-item kdock-item">
+              <div className="kdock-name">
                 {@state.docks[i].name}
               </div>
-              <Label className="kdockTimer" bsStyle="success">
+              <Label className="kdock-timer" bsStyle="success">
                 {resolveTime @state.docks[i].countdown}
               </Label>
             </div>
           else
-            <div className="panelItem kdockItem">
-              <div className="kdockName">
+            <div className="panel-item kdock-item">
+              <div className="kdock-name">
                 {@state.docks[i].name}
               </div>
-              <Label className="kdockTimer" bsStyle="default">
+              <Label className="kdock-timer" bsStyle="default">
                 {resolveTime 0}
               </Label>
             </div>
         }
         </OverlayTrigger>
     }
-    </Panel>
+    </div>
 
 module.exports = KdockPanel

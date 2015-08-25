@@ -1,0 +1,210 @@
+#compactview
+{
+    font-size: 12px;
+
+    min-width: 250px;
+}
+#compactview .nav
+{
+    margin-left: 5px;
+}
+#compactview .nav-stacked
+{
+    flex-flow: row nowrap;
+}
+#compactview .panel
+{
+    margin: 8px 8px 0 0;
+}
+#compactview .panel-container
+{
+    display: flex;
+
+    flex-flow: row;
+    justify-content: space-between;
+}
+#compactview .panel-body
+{
+    /*padding: 8px;*/
+    width: 100%;
+}
+#compactview .teitoku-panel
+{
+    /*min-width: 200px;*/
+    flex: none;
+}
+#compactview .teitoku-panel .img
+{
+    height: 14px;
+    /*min-width: 200px;*/
+
+    flex: none;
+}
+#compactview .combined-panel
+{
+    margin: 0 0 5px 5px;
+
+    background: #333;
+
+    flex-flow: column;
+}
+#compactview .panel-container .ndock-panel,
+#compactview .panel-container .kdock-panel,
+#compactview .panel-container .mission-panel,
+#compactview .panel-container .task-panel
+{
+    flex: none;
+    /*width: 49%;*/
+}
+#compactview .panel-item
+{
+    padding: 4px;
+}
+#compactview .task-panel.panel-body
+{
+    /*border: 1px solid orange;*/
+    display: flex;
+
+    flex-flow: column nowrap;
+}
+#compactview .task-item
+{
+    display: flex;
+
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#compactview .task-item .quest-name
+{
+    overflow: hidden;
+
+    margin-right: auto;
+    padding-right: 10px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    flex: 1;
+}
+#compactview .task-item .quest-progress
+{
+    min-width: 4em;
+
+    flex: none;
+}
+#compactview .task-item .cat-indicator
+{
+    display: inline-block;
+
+    width: 4px;
+    height: 1em;
+    margin-right: 4px;
+
+    vertical-align: middle;
+
+    flex: none;
+}
+#compactview .mission-panel.panel-body
+{
+    /*border: 1px solid orange;*/
+    display: flex;
+
+    flex-flow: column nowrap;
+}
+#compactview .mission-item
+{
+    display: flex;
+
+    flex: 1;
+}
+#compactview .mission-item .mission-name
+{
+    overflow: hidden;
+
+    margin-right: auto;
+    padding-right: 10px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    flex: 1;
+}
+#compactview .mission-item .mission-timer
+{
+    flex: none;
+}
+#compactview .ndock-panel .panel-body
+{
+    /*border: 1px solid skyblue;*/
+    display: flex;
+
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#compactview .ndock-item
+{
+    display: flex;
+
+    flex: 1;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+    /*margin: 3px;*/
+}
+#compactview .ndock-item .ndock-name
+{
+    display: inline-block;
+    overflow: hidden;
+
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    flex: 1;
+}
+#compactview .ndock-item .ndock-timer
+{
+    margin-top: 5px;
+
+    text-align: center;
+
+    flex: none;
+}
+#compactview .kdock-panel .panel-body
+{
+    /*border: 1px solid orange;*/
+    display: flex;
+
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+#compactview .kdock-item
+{
+    display: flex;
+
+    flex: 1;
+    /*margin: 3px;*/
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: space-around;
+}
+#compactview .kdock-item .kdock-name
+{
+    display: inline-block;
+    overflow: hidden;
+
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    flex: 1;
+}
+#compactview .kdock-item .kdock-timer
+{
+    margin-top: 5px;
+    /*display: flex;*/
+
+    flex: 1;
+    /*margin: 3px;*/

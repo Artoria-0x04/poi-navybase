@@ -147,32 +147,32 @@ RecoveryBar = React.createClass
   getInitialState: ->
     elapsed: 0
   updateCountdown: ->
-    @setState
+    @setStaship-details
       elapsed: @state.elapsed + 1000
   componentWillUnmount: ->
     @interval = clearInterval @interval
   componentDidMount: ->
     @interval = setInterval @updateCountdown, 1000 if !@interval?
     if @props.repairTimer.remain? and @state.elapsed - @props.repairTimer.remain < 0
-      $("#MiniShip #recProgress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#28BDF4"
+      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#28BDF4"
     else if @props.missionTimer.remain? and@state.elapsed - @props.missionTimer.remain < 0
-      $("#MiniShip #recProgress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#747474"
+      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#747474"
     else if @props.condTimer.remain? and @state.elapsed - @props.condTimer.remain < 0
-      $("#MiniShip #recProgress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#F4CD28"
+      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#F4CD28"
     else
-      $("#MiniShip #recProgress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#7FC135"
+      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#7FC135"
   componentDidUpdate: (prevProps, prevState) ->
     if @props.repairTimer.remain? and @state.elapsed - @props.repairTimer.remain < 0
-      $("#MiniShip #recProgress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#28BDF4"
+      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#28BDF4"
     else if @props.missionTimer.remain? and @state.elapsed - @props.missionTimer.remain < 0
-      $("#MiniShip #recProgress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#747474"
+      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#747474"
     else if @props.condTimer.remain? and @state.elapsed - @props.condTimer.remain < 0
-      $("#MiniShip #recProgress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#F4CD28"
+      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#F4CD28"
     else
-      $("#MiniShip #recProgress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#7FC135"
+      $("#MiniShip .rec-progress-#{@props.deckIndex}.progress-bar").style.backgroundColor = "#7FC135"
   render: ->
     if @props.repairTimer.remain? and @state.elapsed - @props.repairTimer.remain < 0
-      <ProgressBar key={1} className="recProgress" id="recProgress-#{@props.deckIndex}"
+      <ProgressBar key={1} className="rec-progress-#{@props.deckIndex}"
       now={
         if @state.elapsed - @props.repairTimer.remain < 0
           (@props.repairTimer.total - @props.repairTimer.remain - 60000 + @state.elapsed) / @props.repairTimer.total * 100
@@ -180,7 +180,7 @@ RecoveryBar = React.createClass
           100
         } />
     else if @props.missionTimer.remain? and @state.elapsed - @props.missionTimer.remain < 0
-      <ProgressBar key={1} className="recProgress" id="recProgress-#{@props.deckIndex}"
+      <ProgressBar key={1} className="rec-progress-#{@props.deckIndex}"
       now={
         if @state.elapsed - @props.missionTimer.remain < 0
           (@props.missionTimer.total - @props.missionTimer.remain + @state.elapsed) / @props.missionTimer.total * 100
@@ -188,7 +188,7 @@ RecoveryBar = React.createClass
           100
         } />
     else if @props.condTimer.remain? and @state.elapsed - @props.condTimer.remain < 0
-      <ProgressBar key={1} className="recProgress" id="recProgress-#{@props.deckIndex}"
+      <ProgressBar key={1} className="rec-progress-#{@props.deckIndex}"
       now={
         if @state.elapsed - @props.condTimer.remain< 0
           (@props.condTimer.total - @props.condTimer.remain + @state.elapsed) / @props.condTimer.total * 100
@@ -196,7 +196,7 @@ RecoveryBar = React.createClass
           100
         } />
     else
-      <ProgressBar key={1} className="recProgress" id="recProgress-#{@props.deckIndex}" now={100} />
+      <ProgressBar key={1} className="rec-progress" id="rec-progress-#{@props.deckIndex}" now={100} />
 
 getBackdropStyle = ->
   if window.isDarkTheme
@@ -214,7 +214,7 @@ Slotitems = React.createClass
         item = _slotitems[itemId]
         <div key={i} className="slotitem-container" style={display:"flex", alignItems:"center"}>
           <img key={itemId} src={join('assets', 'img', 'slotitem', "#{item.api_type[3] + 100}.png")} style={flex:"none", width:24, height:24}/>
-          <span className="itemImprovment" style={flex:"none"}>
+          <span className="item-improvment" style={flex:"none"}>
             {item.api_name }
             {if item.api_level > 0 then <strong style={color: '#45A9A5'}>★+{item.api_level}</strong> else ''}
             &nbsp;&nbsp;{
@@ -495,7 +495,7 @@ PaneBody = React.createClass
             </div>
           </Tooltip>
           }>
-          <span className="shipMore" style={flex:"none"}><FontAwesome key={0} name='clock-o' /></span>
+          <span className="ship-more" style={flex:"none"}><FontAwesome key={0} name='clock-o' /></span>
         </OverlayTrigger>
         <RecoveryBar style={flex:"auto"}
           deck={@props.deck}
@@ -505,7 +505,7 @@ PaneBody = React.createClass
           condTimer = {@state.condTimer}
           />
       </div>
-      <div className="shipDetails">
+      <div className="ship-details">
       {
         {$ships, $shipTypes, _ships} = window
         for shipId, j in @props.deck.api_ship
@@ -514,33 +514,33 @@ PaneBody = React.createClass
           shipInfo = $ships[ship.api_ship_id]
           shipType = $shipTypes[shipInfo.api_stype].api_name
           [
-            <div className="shipTile">
-              <div className="statusLabel">
-                <StatusLabelMini label={@state.label[j]}/>
+            <div className="ship-tile">
+              <div className="status-label">
+                <status-labelMini label={@state.label[j]}/>
               </div>
-              <div className="shipItem" style={getStatusStyle @state.label[j]}>
+              <div className="ship-item" style={getStatusStyle @state.label[j]}>
                 <OverlayTrigger placement="top" overlay={
                   <Tooltip>
                     <div>
-                      <Slotitems className="shipSlot" data={ship.api_slot} onslot={ship.api_onslot} maxeq={ship.api_maxeq} dataex={ship.api_slot_ex} />
+                      <Slotitems className="ship-slot" data={ship.api_slot} onslot={ship.api_onslot} maxeq={ship.api_maxeq} dataex={ship.api_slot_ex} />
                     </div>
                   </Tooltip>
                 }>
-                  <div className="shipInfo" >
-                    <span className="shipLv">
+                  <div className="ship-info" >
+                    <span className="ship-lv">
                       Lv. {ship.api_lv}
                     </span>
-                    <span className="shipName">
+                    <span className="ship-name">
                       {shipInfo.api_name}
                     </span>
-                    <span className="shipCond" style={color:getCondStyle ship.api_cond}>
+                    <span className="ship-cond" style={color:getCondStyle ship.api_cond}>
                       ★{ship.api_cond}
                     </span>
                   </div>
                 </OverlayTrigger>
-                <div style={display:"flex", flexFlow:"row nowrap", width:"100%", marginTop:5}>
-                  <span className="shipHp">
-                    <span className="shipHpText" style={flex: "none", display: "flex"}>
+                <div className="flex-row" style={width:"100%", marginTop:5}>
+                  <span className="ship-hp">
+                    <span className="ship-hp-text" style={flex: "none", display: "flex"}>
                       {ship.api_nowhp} / {ship.api_maxhp}
                     </span>
                     <OverlayTrigger show = {ship.api_ndock_time} placement='bottom' overlay={<Tooltip>入渠时间：{resolveTime ship.api_ndock_time / 1000}</Tooltip>}>
@@ -565,7 +565,7 @@ PaneBody = React.createClass
     </div>
 
 module.exports =
-  name: 'MiniShip'
+  name: 'miniship'
   priority: 100000.1
   displayName: <span><FontAwesome key={0} name='bars' /> Mini舰队</span>
   description: '舰队展示页面，展示舰队详情信息'

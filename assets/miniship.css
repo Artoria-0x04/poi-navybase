@@ -1,230 +1,309 @@
-#MiniShip{
-  font-size: 13px;
-  width: 50%;
+.miniship
+{
+    font-size: 13px;
+
+    /*width: 50%;*/
 }
-#MiniShip .btn-group {
-  display: flex;
-  width: 100%;
-  padding-left: 5px;
-  padding-right: 5px;
+.miniship .btn-group
+{
+    display: flex;
+
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
 }
-#MiniShip .btn-group .btn {
-  flex: 1;
-  padding: 7px;
+.miniship .btn-group .btn
+{
+    padding: 7px;
+
+    flex: 1;
 }
-#MiniShip .hidden {
-  display: none;
+.miniship .hidden
+{
+    display: none;
 }
-#MiniShip .show {
-  display: block;
+.miniship .show
+{
+    display: block;
 }
-#MiniShip .deckStatus {
-  padding-left: 0px;
-  padding-right: 0px;
-  text-align: center;
+.miniship .deckStatus
+{
+    padding-right: 0;
+    padding-left: 0;
+
+    text-align: center;
 }
-#MiniShip .progress {
-  margin-bottom: 5px;
+.miniship .progress
+{
+    margin-bottom: 5px;
 }
-#TimeGauge .shipMore {
-  display: inline-block;
-  flex: none;
-  width: 8px;
-  height: 8px;
-  color: #fff;
-  margin: 0 5px;
+.miniship .ship-more
+{
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+    margin: 0 5px;
+
+    color: #fff;
+
+    flex: none;
 }
 
-#TimeGauge .recProgress {
-  margin: 5px;
-  display: block;
-  flex: 1;
+.miniship .rec-progress
+{
+    display: block;
+
+    margin: 5px;
+
+    flex: 1;
 }
-#TimeGauge .recProgress .progress-bar{
-  margin: 0;
+.miniship .rec-progress .progress-bar
+{
+    margin: 0;
 }
-#TimeGauge .recProgress .progress-bar:last-child:before{
-  background-color: rgba(0, 0, 0, 0.2);
+.miniship .rec-progress .progress-bar:last-child:before
+{
+    background-color: rgba(0, 0, 0, .2);
 }
-#MiniShip .shipDetails {
-  margin-bottom: 1px;
+.miniship .ship-details
+{
+    margin-bottom: 1px;
 }
-#MiniShip .shipDetails .shipTile {
-  margin: 5px 5px 5px 0;
-  display: flex;
-  /*align-items: center;*/
-  justify-content: space-between;
+.miniship .ship-details .ship-tile
+{
+    display: flex;
+
+    margin: 5px 5px 5px 0;
+    /*align-items: center;*/
+
+    justify-content: space-between;
 }
-#MiniShip .shipDetails .shipItem {
-  flex: 1;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-end;
-  overflow: hidden;
-  white-space: nowrap;
-  /*margin-right: 15px;*/
+.miniship .ship-details .ship-item
+{
+    display: flex;
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    flex: 1;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    /*margin-right: 15px;*/
 }
 
-#MiniShip .shipDetails .statusLabel {
-  display: inline-block;
-  width: 0px;
-  /*height: 5px;*/
-  margin-right: 5px;
-  flex: none;
-  text-align: center;
-  vertical-align: middle;
-  position: relative;
-  left: 5px;
-  top: -2px;
-  z-index: 100;
+.miniship .ship-details .status-label
+{
+    position: relative;
+    z-index: 100;
+    top: -2px;
+    left: 5px;
+
+    display: inline-block;
+
+    width: 0;
+    /*height: 5px;*/
+    margin-right: 5px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    flex: none;
 }
 
-#MiniShip .shipDetails .shipItem .shipInfo {
-  flex: none;
-  font-size: 12px;
-  display: flex;
-  flex-flow: row nowrap;
-  width: 100%;
-  justify-content: space-between;
-  /*width: 6em;*/
-  /*min-width: 4em;*/
-  /*margin-left: 4px;
+.miniship .ship-details .ship-item .ship-info
+{
+    font-size: 12px;
+
+    display: flex;
+
+    width: 100%;
+
+    flex: none;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    /*width: 6em;*/
+    /*min-width: 4em;*/
+    /*margin-left: 4px;
   margin-right: 4px;*/
 }
-#MiniShip .shipDetails .shipItem .shipInfo .shipLv {
-  flex: none;
-  align-self: flex-start;
+.miniship .ship-details .ship-item .ship-info .ship-lv
+{
+    flex: none;
+    align-self: flex-start;
 }
-#MiniShip .shipDetails .shipItem .shipInfo .shipType {
-  margin-left: 5px;
+.miniship .ship-details .ship-item .ship-info .shipType
+{
+    margin-left: 5px;
 }
-#MiniShip .shipDetails .shipItem .shipInfo .shipName {
-  flex: 1;
-  margin-left: 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.miniship .ship-details .ship-item .ship-info .ship-name
+{
+    overflow: hidden;
+
+    margin-left: 5px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    flex: 1;
 }
-#MiniShip .shipDetails .shipItem .shipCond {
-  flex: none;
-  align-self: flex-end;
-  margin-left: 5px;
-  /*margin-right: 4px;*/
-  /*margin-bottom: 5px;*/
-  /*width: 32px;*/
+.miniship .ship-details .ship-item .ship-cond
+{
+    margin-left: 5px;
+
+    flex: none;
+    align-self: flex-end;
+    /*margin-right: 4px;*/
+    /*margin-bottom: 5px;*/
+    /*width: 32px;*/
 }
-#MiniShip .shipDetails .shipItem .shipCond .condIndicator {
-  display: inline-block;
-  height: 30px;
-  width: 4px;
-  vertical-align: middle;
-  margin-left: 4px;
+.miniship .ship-details .ship-item .ship-cond .condIndicator
+{
+    display: inline-block;
+
+    width: 4px;
+    height: 30px;
+    margin-left: 4px;
+
+    vertical-align: middle;
 }
-/*#MiniShip .shipDetails .condBar {
+/*.miniship .ship-details .condBar {
   margin-top: 3px;
 }
-#MiniShip .shipDetails .condText {
+.miniship .ship-details .condText {
   font-size: 60%;
   margin-right: 4px;
   flex: none;
   line-height: 1;
 }
-#MiniShip .shipDetails .condProgress {
+.miniship .ship-details .condProgress {
   width: 100%;
 }
-#MiniShip .shipDetails .condProgress .progress-bar {
+.miniship .ship-details .condProgress .progress-bar {
 
 }
-#MiniShip .shipDetails .condProgress .progress-bar:last-child:before {
+.miniship .ship-details .condProgress .progress-bar:last-child:before {
   content: attr(data-content);
   background-color: #292929;
 }*/
 
-#MiniShip .shipItem .shipHp{
-  flex: 2;
-  display: flex;
-  flex-direction: row;
-  /*margin: 0 4px;*/
-}
-#MiniShip .shipItem .shipHpText {
-  font-size: 60%;
-  margin-right: 4px;
-  flex: none;
-  line-height: 1;
-}
-#MiniShip .hp-progress {
-  /*border-radius: 0px;*/
-  background-color: inherit;
-  vertical-align: bottom;
-}
-#MiniShip .hp-progress .progress {
-  height: 6px;
-}
-#MiniShip .hp-progress .progress .progress-bar {
-  font-size: 11px;
-  line-height: 0.9;
-  /*color: #666;*/
-}
-#MiniShip .hp-progress .progress {
-  position: relative;
-}
-#MiniShip .hp-progress .progress-bar span span {
-  position: absolute;
-  width: 100%;
-  display: block;
-}
-#MiniShip .shipDetails .shipItem .progress .progress-condition{
-}
+.miniship .ship-item .ship-hp
+{
+    display: flex;
+    flex-direction: row;
 
-#MiniShip .shipDetails .shipItem .shipFB{
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  margin-left: 4px;
-  /*margin-right: 4px;*/
+    flex: 2;
+    /*margin: 0 4px;*/
 }
-#MiniShip .shipDetails .shipItem .shipFB .progress{
-  width: 6px;
-}
+.miniship .ship-item .ship-hp-text
+{
+    font-size: 60%;
+    line-height: 1;
 
-#MiniShip .slotitems .slotitem-container .itemImprovment{
-  margin-left: 5px;
+    margin-right: 4px;
+
+    flex: none;
 }
-#MiniShip .shipDetails .shipItem .shipSlot{
-  width: 120px;
-  flex: none;
-  margin-left: 4px;
-  margin-right: 4px;
-  margin-bottom: 3px;
+.miniship .hp-progress
+{
+    vertical-align: bottom;
+    /*border-radius: 0px;*/
+
+    background-color: inherit;
 }
-#MiniShip .slotitem-container {
-  position: relative;
-  vertical-align: bottom;
-  display: inline;
+.miniship .hp-progress .progress
+{
+    height: 6px;
 }
-#MiniShip .slotitem-container .slotitem-onslot {
-  position: absolute;
-  font-size: 9px;
-  left: -1px;
-  top: -9px;
-  padding: 2px;
-  border-radius: 4px;
+.miniship .hp-progress .progress .progress-bar
+{
+    font-size: 11px;
+    line-height: .9;
+    /*color: #666;*/
 }
-#MiniShip .slotitem-container span.slotitem-onslot.label{
-  padding: 2px 2px;
+.miniship .hp-progress .progress
+{
+    position: relative;
 }
-#MiniShip .slotitem-container span.show {
-  display: inline !important;
-}
-#MiniShip .slotitem-container img {
-  width: 24px;
-  height: 24px;
+.miniship .hp-progress .progress-bar span span
+{
+    position: absolute;
+
+    display: block;
+
+    width: 100%;
 }
 
 
-#MiniShip .alert {
-  background-color: transparent;
-  border-color: transparent;
-  margin-top: 9px;
-  text-align: center;
+.miniship .ship-details .ship-item .shipFB
+{
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 4px;
+
+    flex: 1;
+    /*margin-right: 4px;*/
+}
+.miniship .ship-details .ship-item .shipFB .progress
+{
+    width: 6px;
+}
+
+.miniship .slotitems .slotitem-container .item-improvment
+{
+    margin-left: 5px;
+}
+.miniship .ship-details .ship-item .ship-slot
+{
+    width: 120px;
+    margin-right: 4px;
+    margin-bottom: 3px;
+    margin-left: 4px;
+
+    flex: none;
+}
+.miniship .slotitem-container
+{
+    position: relative;
+
+    display: inline;
+
+    vertical-align: bottom;
+}
+.miniship .slotitem-container .slotitem-onslot
+{
+    font-size: 9px;
+
+    position: absolute;
+    top: -9px;
+    left: -1px;
+
+    padding: 2px;
+
+    border-radius: 4px;
+}
+.miniship .slotitem-container span.slotitem-onslot.label
+{
+    padding: 2px 2px;
+}
+.miniship .slotitem-container span.show
+{
+    display: inline !important;
+}
+.miniship .slotitem-container img
+{
+    width: 24px;
+    height: 24px;
+}
+
+
+.miniship .alert
+{
+    margin-top: 9px;
+
+    text-align: center;
+
+    border-color: transparent;
+    background-color: transparent;
 }
