@@ -2,6 +2,8 @@
 {log, warn, error} = window
 {Panel, Grid, Col} = ReactBootstrap
 CombinedPanel = require './combined-panel'
+MissionPanel = require './mission-panel'
+TaskPanel = require './task-panel'
 
 order = if layout == 'horizonal' or window.doubleTabbed then [1, 3, 5, 7, 2, 4, 6, 8] else [1..8]
 
@@ -171,14 +173,20 @@ TeitokuPanel = React.createClass
   componentWillUnmount: ->
     window.removeEventListener 'game.response', @handleResponse
   render: ->
-    <div className="flex-column">
-      <Panel className="teitoku-panel">
-        {getHeader @state}
+    <div className="flex-column" style={flex:2.2}>
+      <Panel className="teitoku-panel" style={display:"flex", justifyContent:"space-between"}>
+        <span style={flex:"none"}>
+          {getHeader @state}
+        </span>
+        <span style={flex:"none"}>
+          舰娘：{@state.shipCount} / {@state.maxChara}
+        </span>
+        <span style={flex:"none"}>
+          装备：{@state.slotitemCount} / {@state.maxSlotitem}
+        </span>
       </Panel>
-      <div className="flex-row" style={display:"flex", justifyContent:"space-between", height:274, minHeight:270}>
+      <div className="flex-row" style={flex:1, justifyContent:"space-between", height:274, minHeight:270}>
         <Panel className="flex-column" style={flex:"none"}>
-          <div xs={12}><p>舰娘：{@state.shipCount} / {@state.maxChara}</p></div>
-          <div xs={12}><p>装备：{@state.slotitemCount} / {@state.maxSlotitem}</p></div>
           {
             for i in order
               <div key={i} xs={12}>
@@ -190,6 +198,14 @@ TeitokuPanel = React.createClass
           }
         </Panel>
         <CombinedPanel style={flex:"none", height:"100%"} />
+        <div className="flex-column" style={flex:1}>
+          <div className="panel-col mission-panel" ref="missionPanel" >
+            <MissionPanel />
+          </div>
+          <div className="panel-col task-panel" ref="taskPanel" >
+            <TaskPanel />
+          </div>
+        </div>
       </div>
     </div>
 

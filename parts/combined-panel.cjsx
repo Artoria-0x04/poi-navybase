@@ -1,6 +1,6 @@
 path = require 'path-extra'
 {layout, ROOT, $, $$, React, ReactBootstrap} = window
-{Nav, NavItem, Panel} = ReactBootstrap
+{Nav, NavItem, Button, ButtonGroup, Panel} = ReactBootstrap
 NdockPanel = require './ndock-panel'
 KdockPanel = require './kdock-panel'
 
@@ -12,10 +12,10 @@ CombinedPanel = React.createClass
     @forceUpdate()
   render: ->
     <Panel className="combined-panel flex-column" style={alignItems:"center", justifyContent:"space-between"}>
-      <Nav bsStyle='pills' stacked activeKey={@state.key} onSelect={@handleSelect}>
-        <NavItem key={0} eventKey={0} id="nav-item-kdock">建造</NavItem>
-        <NavItem key={1} eventKey={1} id="nav-item-ndock">入渠</NavItem>
-      </Nav>
+      <ButtonGroup>
+        <Button key={0} bsSize="small" ventKey={0} onClick={@handleSelect.bind(this, 0)} className={if @state.key == 0 then 'active' else ''} id="nav-item-kdock">建造</Button>
+        <Button key={1} bsSize="small" eventKey={1} onClick={@handleSelect.bind(this, 1)} className={if @state.key == 1 then 'active' else ''}>入渠</Button>
+      </ButtonGroup>
       <div className={"panel-col kdock-panel " + if @state.key == 0 then 'show' else 'hidden'} eventKey={0} key={0} style={flex: 1}>
         <KdockPanel />
       </div>

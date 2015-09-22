@@ -9,7 +9,7 @@ i18n = require './node_modules/i18n'
 i18n.configure
   locales: ['en_US', 'ja_JP', 'zh_CN']
   defaultLocale: 'zh_CN'
-  directory: path.join(__dirname, 'assets', 'i18n')
+  directory: path.join(__dirname, 'i18n')
   updateFiles: false
   indent: '\t'
   extension: '.json'
@@ -59,15 +59,10 @@ module.exports =
           <link rel="stylesheet" href={path.join(path.relative(ROOT, __dirname), 'assets', 'flex.css')} />
           <div className="panel-container flex-row">
             <TeitokuPanel />
-            <div className="flex-column" style={flex:1}>
-              <div className="panel-col mission-panel" ref="missionPanel" >
-                <MissionPanel />
-              </div>
-              <div className="panel-col task-panel" ref="taskPanel" >
-                <TaskPanel />
-              </div>
-            </div>
             <div className="panel-col #{MiniShip.name}" ref="miniship" style={flex:1} >
+              {React.createElement MiniShip.reactClass}
+            </div>
+            <div className="panel-col #{MiniShip.name}" ref="miniship" style={flex:1, marginRight: 8} >
               {React.createElement MiniShip.reactClass}
             </div>
           </div>
