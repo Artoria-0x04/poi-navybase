@@ -4,7 +4,10 @@
 {Button, ButtonGroup} = ReactBootstrap
 {ProgressBar, OverlayTrigger, Tooltip, Alert, Overlay, Label, Panel, Popover} = ReactBootstrap
 {__, __n} = require 'i18n'
+
 StatusLabelMini = require './statuslabelmini'
+CondBar = require './condbar'
+RecoveryBar = require './recovery-bar'
 Slotitems = require './slotitems'
 
 getHpStyle = (percent) ->
@@ -59,9 +62,7 @@ ShipTile = React.createClass
       <div className="ship-item" style={getStatusStyle label}>
         <OverlayTrigger placement="top" overlay={
           <Tooltip>
-            <div>
-              <Slotitems className="ship-slot" data={ship.api_slot.concat(ship.api_slot_ex || -1)} onslot={ship.api_onslot} maxeq={ship.api_maxeq} layout="mini"/>
-            </div>
+            <Slotitems className="ship-slot" data={ship.api_slot.concat(ship.api_slot_ex || -1)} onslot={ship.api_onslot} maxeq={ship.api_maxeq} layout="mini"/>
           </Tooltip>
         }>
           <div className="ship-info" >

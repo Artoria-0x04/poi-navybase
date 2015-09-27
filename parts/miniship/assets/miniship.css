@@ -273,53 +273,15 @@
     width:6px;
 }
 
+.miniship .ship-details .ship-item .ship-slot
+{
+    width: 120px;
+    margin-right: 4px;
+    margin-bottom: 3px;
+    margin-left: 4px;
 
-.miniship .slotitems .slotitem-container .item-improvment {
-    margin-left:5px;
+    flex: none;
 }
-
-
-.miniship .ship-details .ship-item .ship-slot {
-    width:120px;
-    margin-right:4px;
-    margin-bottom:3px;
-    margin-left:4px;
-    flex:none;
-}
-
-
-.miniship .slotitem-container {
-    position:relative;
-    display:inline;
-    vertical-align:bottom;
-}
-
-
-.miniship .slotitem-container .slotitem-onslot {
-    font-size:9px;
-    position:absolute;
-    top:-9px;
-    left:-1px;
-    padding:2px;
-    border-radius:4px;
-}
-
-
-.miniship .slotitem-container span.slotitem-onslot.label {
-    padding:2px 2px;
-}
-
-
-.miniship .slotitem-container span.show {
-    display:inline !important;
-}
-
-
-.miniship .slotitem-container img {
-    width:24px;
-    height:24px;
-}
-
 
 .miniship .alert {
     margin-top:9px;

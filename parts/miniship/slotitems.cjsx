@@ -12,6 +12,7 @@ Slotitems = React.createClass
   render: ->
     if @props.layout == 'expand'
       <div className="slotitems">
+        <link rel="stylesheet" href={join(relative(ROOT, __dirname), 'assets', 'slotitems.css')} />
       {
         {$slotitems, _slotitems} = window
         for itemId, i in @props.data
@@ -20,7 +21,7 @@ Slotitems = React.createClass
           <div key={i} className="slotitem-container">
             <OverlayTrigger placement='left' overlay={
               <Tooltip>
-                {item.api_name}
+                {item.api_name}&nbsp;&nbsp;
                 {if item.api_level > 0 then <strong style={color: '#45A9A5'}>★+{item.api_level}</strong> else ''}
                 {
                   if item.api_alv? and item.api_alv >=1 and item.api_alv <= 3
@@ -34,7 +35,7 @@ Slotitems = React.createClass
                   else if item.api_alv? and item.api_alv >= 9
                     <strong key={j} style={color: '#F94D2F'}>★</strong>
                   else ''
-                }
+                }&nbsp;&nbsp;
               </Tooltip>
             }>
               <img key={itemId} src={path.join('assets', 'img', 'slotitem', "#{item.api_type[3] + 100}.png")} />
@@ -49,7 +50,8 @@ Slotitems = React.createClass
       }
       </div>
     else if @props.layout == 'mini'
-      <div className="slotitems" style={display:"flex", flexFlow:"column"}>
+      <div className="slotitems-mini" style={display:"flex", flexFlow:"column"}>
+        <link rel="stylesheet" href={join(relative(ROOT, __dirname), 'assets', 'slotitems.css')} />
       {
         {$slotitems, _slotitems} = window
         for itemId, i in @props.data
@@ -59,23 +61,24 @@ Slotitems = React.createClass
             <img key={itemId} src={path.join('assets', 'img', 'slotitem', "#{item.api_type[3] + 100}.png")}} />
             <span className="slotitem-name">
               {item.api_name}
-                {if item.api_level > 0 then <strong style={color: '#45A9A5'}>★+{item.api_level}</strong> else ''}
-                &nbsp;&nbsp;{
-                  if item.api_alv? and item.api_alv >=1 and item.api_alv <= 3
-                    for j in [1..item.api_alv]
-                      <strong key={j} style={color: '#3EAEFF'}>|</strong>
-                  else if item.api_alv? and item.api_alv >= 4 and item.api_alv <= 6
-                    for j in [1..item.api_alv - 3]
-                      <strong key={j} style={color: '#F9C62F'}>\</strong>
-                  else if item.api_alv? and item.api_alv >= 7 and item.api_alv <= 9
-                    <strong key={j} style={color: '#F9C62F'}> <FontAwesome key={0} name='angle-double-right'/> </strong>
-                  else if item.api_alv? and item.api_alv >= 9
-                    <strong key={j} style={color: '#F94D2F'}>★</strong>
-                  else ''
-                }
+              {if item.api_level > 0 then <strong style={color: '#45A9A5'}>★+{item.api_level}</strong> else ''}
+              &nbsp;&nbsp;{
+                if item.api_alv? and item.api_alv >=1 and item.api_alv <= 3
+                  for j in [1..item.api_alv]
+                    <strong key={j} style={color: '#3EAEFF'}>|</strong>
+                else if item.api_alv? and item.api_alv >= 4 and item.api_alv <= 6
+                  for j in [1..item.api_alv - 3]
+                    <strong key={j} style={color: '#F9C62F'}>\</strong>
+                else if item.api_alv? and item.api_alv >= 7 and item.api_alv <= 9
+                  <strong key={j} style={color: '#F9C62F'}> <FontAwesome key={0} name='angle-double-right'/> </strong>
+                else if item.api_alv? and item.api_alv >= 9
+                  <strong key={j} style={color: '#F94D2F'}>★</strong>
+                else ''
+              }&nbsp;&nbsp;
             </span>
-            <span className="slotitem-onslot #{if (item.api_type[3] >= 6 && item.api_type[3] <= 10) || (item.api_type[3] >= 21 && item.api_type[3] <= 22) || item.api_type[3] == 33 then 'show' else 'hide'}"
-                            bsStyle="#{if @props.onslot[i] < @props.maxeq[i] then 'warning' else 'default'}">
+            <span className="slotitem-onslot
+                             #{if (item.api_type[3] >= 6 && item.api_type[3] <= 10) || (item.api_type[3] >= 21 && item.api_type[3] <= 22) || item.api_type[3] == 33 then 'show' else 'hide'}"
+                             bsStyle="#{if @props.onslot[i] < @props.maxeq[i] then 'warning' else 'default'}">
               {@props.onslot[i]}
             </span>
           </div>

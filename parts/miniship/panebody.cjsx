@@ -4,9 +4,7 @@
 {Button, ButtonGroup, OverlayTrigger, Tooltip, Overlay, Popover, ProgressBar} = ReactBootstrap
 {__, __n} = require 'i18n'
 
-Slotitems = require './slotitems'
 ShipTile = require './shiptile'
-RecoveryBar = require './recovery-bar'
 DeckInfo = require './deck-info'
 {getShipStatus} = require './statuslabelmini'
 
