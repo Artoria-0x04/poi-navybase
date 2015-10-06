@@ -1,0 +1,4 @@
+[submodule "parts/omniship"]
+	path = parts/omniship
+	url = https://github.com/PHELiOX/poi-omniship.git
+	branch = master

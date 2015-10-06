@@ -1,72 +1,72 @@
-#compactview
+#NavyBase
 {
     font-size: 12px;
 
     min-width: 250px;
 }
-#compactview .nav
+#NavyBase .nav
 {
     margin-left: 5px;
 }
-#compactview .nav-stacked
+#NavyBase .nav-stacked
 {
     flex-flow: row nowrap;
 }
-#compactview .panel
+#NavyBase .panel
 {
     margin: 8px 0 0 8px;
 }
-#compactview .panel-container
+#NavyBase .panel-container
 {
     display: flex;
 
     flex-flow: row;
     justify-content: space-between;
 }
-#compactview .panel-body
+#NavyBase .panel-body
 {
     width: 100%;
     padding: 8px;
 }
-#compactview .teitoku-panel
+#NavyBase .teitoku-panel
 {
     /*min-width: 200px;*/
     flex: none;
 }
-#compactview .teitoku-panel .img
+#NavyBase .teitoku-panel .img
 {
     height: 14px;
     /*min-width: 200px;*/
 
     flex: none;
 }
-#compactview .combined-panel
+#NavyBase .combined-panel
 {
     /*margin: 0 0 5px 5px;*/
     /*background: #333;*/
 
     flex-flow: column;
 }
-#compactview .panel-container .ndock-panel,
-#compactview .panel-container .kdock-panel,
-#compactview .panel-container .mission-panel,
-#compactview .panel-container .task-panel
+#NavyBase .panel-container .ndock-panel,
+#NavyBase .panel-container .kdock-panel,
+#NavyBase .panel-container .mission-panel,
+#NavyBase .panel-container .task-panel
 {
     flex: none;
     /*width: 49%;*/
 }
-#compactview .panel-item
+#NavyBase .panel-item
 {
     padding: 4px;
 }
-#compactview .task-panel.panel-body
+#NavyBase .task-panel.panel-body
 {
     /*border: 1px solid orange;*/
     display: flex;
 
     flex-flow: column nowrap;
 }
-#compactview .task-item
+#NavyBase .task-item
 {
     display: flex;
 
@@ -74,7 +74,7 @@
     justify-content: space-between;
     align-items: center;
 }
-#compactview .task-item .quest-name
+#NavyBase .task-item .quest-name
 {
     overflow: hidden;
 
@@ -86,13 +86,13 @@
 
     flex: 1;
 }
-#compactview .task-item .quest-progress
+#NavyBase .task-item .quest-progress
 {
     min-width: 4em;
 
     flex: none;
 }
-#compactview .task-item .cat-indicator
+#NavyBase .task-item .cat-indicator
 {
     display: inline-block;
 
@@ -104,20 +104,20 @@
 
     flex: none;
 }
-#compactview .mission-panel.panel-body
+#NavyBase .mission-panel.panel-body
 {
     /*border: 1px solid orange;*/
     display: flex;
 
     flex-flow: column nowrap;
 }
-#compactview .mission-item
+#NavyBase .mission-item
 {
     display: flex;
 
     flex: 1;
 }
-#compactview .mission-item .mission-name
+#NavyBase .mission-item .mission-name
 {
     overflow: hidden;
 
@@ -129,11 +129,11 @@
 
     flex: 1;
 }
-#compactview .mission-item .mission-timer
+#NavyBase .mission-item .mission-timer
 {
     flex: none;
 }
-#compactview .ndock-panel .panel-body
+#NavyBase .ndock-panel .panel-body
 {
     /*border: 1px solid skyblue;*/
     display: flex;
@@ -142,7 +142,7 @@
     justify-content: space-between;
     align-items: flex-end;
 }
-#compactview .ndock-item
+#NavyBase .ndock-item
 {
     display: flex;
 
@@ -152,7 +152,7 @@
     align-items: stretch;
     /*margin: 3px;*/
 }
-#compactview .ndock-item .ndock-name
+#NavyBase .ndock-item .ndock-name
 {
     display: inline-block;
     overflow: hidden;
@@ -163,7 +163,7 @@
 
     flex: 1;
 }
-#compactview .ndock-item .ndock-timer
+#NavyBase .ndock-item .ndock-timer
 {
     margin-top: 5px;
 
@@ -171,7 +171,7 @@
 
     flex: none;
 }
-#compactview .kdock-panel .panel-body
+#NavyBase .kdock-panel .panel-body
 {
     /*border: 1px solid orange;*/
     display: flex;
@@ -179,7 +179,7 @@
     flex-flow: column nowrap;
     justify-content: space-between;
 }
-#compactview .kdock-item
+#NavyBase .kdock-item
 {
     display: flex;
 
@@ -189,7 +189,7 @@
     align-items: stretch;
     justify-content: space-around;
 }
-#compactview .kdock-item .kdock-name
+#NavyBase .kdock-item .kdock-name
 {
     display: inline-block;
     overflow: hidden;
@@ -200,7 +200,7 @@
 
     flex: 1;
 }
-#compactview .kdock-item .kdock-timer
+#NavyBase .kdock-item .kdock-timer
 {
     margin-top: 5px;
     /*display: flex;*/
