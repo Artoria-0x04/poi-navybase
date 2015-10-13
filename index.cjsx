@@ -2,13 +2,14 @@ path = require 'path-extra'
 {layout, ROOT, $, $$, React, ReactBootstrap} = window
 {layout, tabbed} = window
 {MissionPanel, NdockPanel, KdockPanel, TaskPanel, OmniShip, TeitokuPanel, CombinedPanel} = require './parts'
-{LayoutLandescape, LayoutPortrait} = require './renderers'
+
+{LayoutLandscape, LayoutPortrait} = require './renderers'
 
 i18n = require './node_modules/i18n'
 {__} = i18n
 
 i18n.configure
-  locales: ['en_US', 'ja_JP', 'zh_CN', 'zh_TW']
+  locales: ['en-US', 'ja-JP', 'zh-CN', 'zh-TW']
   defaultLocale: 'zh_CN'
   directory: path.join(__dirname, 'i18n')
   updateFiles: false
@@ -22,7 +23,7 @@ module.exports =
   name: 'NavyBase'
   priority: 100000
   displayName: <span><FontAwesome key={0} name='home' />{__ ' Overview'}</span>
-  description: '母港'
+  description: '港口基地'
   reactClass: React.createClass
     getInitialState: ->
       null
@@ -37,11 +38,11 @@ module.exports =
       window.addEventListener 'layout.change', @handleChangeLayout
     componentWillUnmount: ->
       window.removeEventListener 'layout.change', @handleChangeLayout
-    componentWillUnmount: ->
+    componentWillMount: ->
       if layout == 'horizontal' or (tabbed == 'double' and layout == 'vertical')
         @render = LayoutPortrait
       else
-        @render = LayoutLandescape
+        @render = LayoutLandscape
     render: ->
       <div>
       </div>
