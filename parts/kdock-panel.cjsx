@@ -2,6 +2,7 @@
 {resolveTime, success, warn} = window
 {Panel, Table, OverlayTrigger, Tooltip, Label} = ReactBootstrap
 {join} = require 'path-extra'
+{__, __n} = require 'i18n'
 
 getMaterialImage = (idx) ->
   return "#{ROOT}/assets/img/material/0#{idx}.png"

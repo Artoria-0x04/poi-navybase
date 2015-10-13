@@ -3,6 +3,7 @@
 CSON = require 'cson'
 {join} = require 'path-extra'
 fs = require 'fs-extra'
+{__, __n} = require 'i18n'
 
 zero = 331200000
 isDifferentDay = (time1, time2) ->

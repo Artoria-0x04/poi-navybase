@@ -2,6 +2,7 @@
 {resolveTime} = window
 {Panel, Table, Label} = ReactBootstrap
 {join} = require 'path-extra'
+{__, __n} = require 'i18n'
 
 NdockPanel = React.createClass
   getInitialState: ->

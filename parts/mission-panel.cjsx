@@ -3,6 +3,7 @@
 {resolveTime} = window
 {notify} = window
 {join} = require 'path-extra'
+{__, __n} = require 'i18n'
 
 MissionPanel = React.createClass
   getInitialState: ->

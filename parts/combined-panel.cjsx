@@ -1,6 +1,8 @@
 path = require 'path-extra'
 {layout, ROOT, $, $$, React, ReactBootstrap} = window
 {Nav, NavItem, Button, ButtonGroup, Panel} = ReactBootstrap
+{__, __n} = require 'i18n'
+
 NdockPanel = require './ndock-panel'
 KdockPanel = require './kdock-panel'
 
