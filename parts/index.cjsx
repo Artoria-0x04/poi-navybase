@@ -3,6 +3,6 @@ module.exports =
   NdockPanel: require './ndock-panel'
   KdockPanel: require './kdock-panel'
   TaskPanel: require './task-panel'
-  MiniShip: require './miniship'
   TeitokuPanel: require './teitoku-panel'
   CombinedPanel: require './combined-panel'
+  OmniShip: require './omniship'
