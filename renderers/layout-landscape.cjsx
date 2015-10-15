@@ -10,9 +10,6 @@ render = ->
     <link rel="stylesheet" href={path.join(path.relative(ROOT, __dirname), '..', 'assets', 'flex.css')} />
     <div className="panel-container flex-row">
       <TeitokuPanel />
-      <div className="panel-col #{OmniShip.name}" ref="omniship" style={flex:1} >
-        {React.createElement OmniShip.reactClass}
-      </div>
       <div className="panel-col #{OmniShip.name}" ref="omniship" style={flex:1, marginRight: 8} >
         {React.createElement OmniShip.reactClass}
       </div>

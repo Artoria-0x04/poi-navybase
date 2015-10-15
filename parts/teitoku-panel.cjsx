@@ -7,7 +7,8 @@ CombinedPanel = require './combined-panel'
 MissionPanel = require './mission-panel'
 TaskPanel = require './task-panel'
 
-order = if layout == 'horizontal' or window.tabbed == 'double' then [1, 3, 5, 7, 2, 4, 6, 8] else [1..8]
+# order = if layout == 'horizontal' or window.tabbed == 'double' then [1, 3, 5, 7, 2, 4, 6, 8] else [1..8]
+order = [1..8]
 
 rankName = ['', '元帥', '大将', '中将', '少将', '大佐', '中佐', '新米中佐', '少佐', '中堅少佐', '新米少佐']
 
@@ -175,7 +176,7 @@ TeitokuPanel = React.createClass
   componentWillUnmount: ->
     window.removeEventListener 'game.response', @handleResponse
   render: ->
-    <div className="flex-column" style={flex:2.2}>
+    <div className="flex-column" style={flex:1.2}>
       <Panel className="teitoku-panel" style={display:"flex", justifyContent:"space-between"}>
         <span style={flex:"none"}>
           {getHeader @state}
