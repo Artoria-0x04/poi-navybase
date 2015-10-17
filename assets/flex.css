@@ -1,17 +1,17 @@
 /* for flex layout */
-.flex-row
+#NavyBase .flex-row
 {
     display: flex;
 
     flex-flow: row nowrap;
 }
-.flex-column
+#NavyBase .flex-column
 {
     display: flex;
 
     flex-flow: column nowrap;
 }
-.flex-wrap
+#NavyBase .flex-wrap
 {
     flex-wrap: wrap;
 }

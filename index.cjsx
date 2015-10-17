@@ -22,7 +22,7 @@ i18n.setLocale(window.language)
 module.exports =
   name: 'NavyBase'
   priority: 100000
-  displayName: <span><FontAwesome key={0} name='home' />{__ ' Overview'}</span>
+  displayName: <span><FontAwesome key={0} name='anchor' />{__ ' Overview'}</span>
   description: '港口基地'
   reactClass: React.createClass
     getInitialState: ->
