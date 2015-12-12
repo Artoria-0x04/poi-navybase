@@ -2,11 +2,11 @@ path = require 'path-extra'
 {layout, ROOT, $, $$, React, ReactBootstrap} = window
 {layout, tabbed} = window
 {MissionPanel, NdockPanel, KdockPanel, TaskPanel, OmniShip, TeitokuPanel, CombinedPanel} = require './parts'
-
-{LayoutLandscape, LayoutPortrait} = require './renderers'
-
+PureRenderMixin = require 'react-addons-pure-render-mixin'
 i18n = require './node_modules/i18n'
 {__} = i18n
+
+{LayoutLandscape, LayoutPortrait} = require './renderers'
 
 i18n.configure
   locales: ['en-US', 'ja-JP', 'zh-CN', 'zh-TW']
@@ -25,6 +25,7 @@ module.exports =
   displayName: <span><FontAwesome key={0} name='anchor' />{__ ' Overview'}</span>
   description: '港口基地'
   reactClass: React.createClass
+    mixins: [PureRenderMixin]
     getInitialState: ->
       null
     handleChangeLayout: (e) ->
@@ -43,6 +44,12 @@ module.exports =
         @render = LayoutPortrait
       else
         @render = LayoutLandscape
+        nowTime: 0
+    componentWillUpdate: (nextProps, nextState) ->
+      @nowTime = (new Date()).getTime()
+    componentDidUpdate: (prevProps, prevState) ->
+      cur = (new Date()).getTime()
+      console.log "the cost of navybase-module's render: #{cur-@nowTime}ms" if process.env.DEBUG?
     render: ->
       <div>
       </div>

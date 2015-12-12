@@ -1,6 +1,6 @@
 path = require 'path-extra'
 {layout, ROOT, $, $$, React, ReactBootstrap} = window
-{TabbedArea, TabPane, Grid, Col, Row, Accordion, Panel, Nav, NavItem} = ReactBootstrap
+{Tabs, Tab, Grid, Col, Row, Accordion, Panel, Nav, NavItem} = ReactBootstrap
 
 {OmniShip, TeitokuPanel} = require '../parts'
 
